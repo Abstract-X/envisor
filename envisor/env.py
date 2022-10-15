@@ -1,4 +1,4 @@
-from typing import TypeVar, Any, Optional
+from typing import TypeVar, Type, Optional
 import os
 
 
@@ -35,8 +35,8 @@ class Env:
     def get(
         self,
         name: str,
-        type_: Value = str,
-        nested_type: Any = None,
+        type_: Type[Value] = str,
+        nested_type: type = None,
         *,
         default: Value = _NOT_SET
     ) -> Value:
